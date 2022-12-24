@@ -1,14 +1,14 @@
 <?php
 namespace App\Http\Livewire;
 
+use App\Models\Post;
 use Livewire\Component;
 
 class Articles extends Component
 {
     public function render()
     {
-        return view('livewire.articles', [
-            'articles' => ['uno', 'dos', 'tres']
-        ]);
+        $posts = Post::all();
+        return view('livewire.articles', compact('posts'));
     }
 }
