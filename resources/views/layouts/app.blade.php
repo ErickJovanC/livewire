@@ -14,7 +14,8 @@
             @livewireStyles
     </head>
     <body class="antialiased">
-        @livewire('articles')
+        {{-- @livewire('articles') --}}
+        {{ $slot }}
         @livewireScripts
     </body>
 </html>
