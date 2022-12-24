@@ -8,12 +8,42 @@
             <thead class="bg-white border-b">
                 <tr>
                     <th wire:click="order('id')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        {{-- Icons sort --}}
+                        @if ($sort == 'id')
+                            @if ($direction == 'asc')
+                            <i class="fas fa-sort-alpha-down float-right"></i>
+                            @else
+                                <i class="fas fa-sort-alpha-up float-right"></i>
+                            @endif
+                        @else
+                            <i class="fas fa-sort"></i>
+                        @endif
                         #
                     </th>
                     <th wire:click="order('title')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        {{-- Icons sort --}}
+                        @if ($sort == 'title')
+                            @if ($direction == 'asc')
+                            <i class="fas fa-sort-alpha-down float-right"></i>
+                            @else
+                                <i class="fas fa-sort-alpha-up float-right"></i>
+                            @endif
+                        @else
+                            <i class="fas fa-sort"></i>
+                        @endif
                         Title
                     </th>
                     <th wire:click="order('content')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        {{-- Icons sort --}}
+                        @if ($sort == 'content')
+                            @if ($direction == 'asc')
+                                <i class="fas fa-sort-alpha-down float-right"></i>
+                            @else
+                                <i class="fas fa-sort-alpha-up float-right"></i>
+                            @endif
+                        @else
+                            <i class="fas fa-sort"></i>
+                        @endif
                         Content
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
