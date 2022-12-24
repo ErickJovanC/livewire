@@ -1,5 +1,8 @@
 <div>
     <x-table>
+        <div>
+            <input type="text" wire:model="search">
+        </div>
         <table class="min-w-full">
             <thead class="bg-white border-b">
                 <tr>
