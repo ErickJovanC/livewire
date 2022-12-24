@@ -7,13 +7,13 @@
         <table class="min-w-full">
             <thead class="bg-white border-b">
                 <tr>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th wire:click="order('id')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                         #
                     </th>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th wire:click="order('title')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                         Title
                     </th>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th wire:click="order('content')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                         Content
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
