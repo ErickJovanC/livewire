@@ -1,8 +1,9 @@
 <div>
     <x-table>
         <div>
-            <input type="text" wire:model="search">
+            <input type="text" wire:model="search" placeholder="Busqueda...">
         </div>
+        @if($posts->count())
         <table class="min-w-full">
             <thead class="bg-white border-b">
                 <tr>
@@ -39,5 +40,8 @@
                 @endforeach
             </tbody>
         </table>
+        @else
+            No se encontraron Registros
+        @endif
     </x-table>
 </div>
