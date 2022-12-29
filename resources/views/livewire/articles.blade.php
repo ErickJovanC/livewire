@@ -1,17 +1,18 @@
 <div>
-    <x-table>
-        <div>
-            <input type="text" wire:model="search" placeholder="Busqueda...">
-        </div>
-        @if($posts->count())
+    <div class="flex items-center">
+        <input type="text" wire:model="search" placeholder="Busqueda...">
+        @livewire('create-post')
+    </div>
+    @if ($posts->count())
         <table class="min-w-full">
             <thead class="bg-white border-b">
                 <tr>
-                    <th wire:click="order('id')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th wire:click="order('id')" scope="col"
+                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                         {{-- Icons sort --}}
                         @if ($sort == 'id')
                             @if ($direction == 'asc')
-                            <i class="fas fa-sort-alpha-down float-right"></i>
+                                <i class="fas fa-sort-alpha-down float-right"></i>
                             @else
                                 <i class="fas fa-sort-alpha-up float-right"></i>
                             @endif
@@ -20,11 +21,12 @@
                         @endif
                         #
                     </th>
-                    <th wire:click="order('title')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th wire:click="order('title')" scope="col"
+                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                         {{-- Icons sort --}}
                         @if ($sort == 'title')
                             @if ($direction == 'asc')
-                            <i class="fas fa-sort-alpha-down float-right"></i>
+                                <i class="fas fa-sort-alpha-down float-right"></i>
                             @else
                                 <i class="fas fa-sort-alpha-up float-right"></i>
                             @endif
@@ -33,7 +35,8 @@
                         @endif
                         Title
                     </th>
-                    <th wire:click="order('content')" scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th wire:click="order('content')" scope="col"
+                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                         {{-- Icons sort --}}
                         @if ($sort == 'content')
                             @if ($direction == 'asc')
@@ -70,8 +73,7 @@
                 @endforeach
             </tbody>
         </table>
-        @else
-            No se encontraron Registros
-        @endif
-    </x-table>
+    @else
+        No se encontraron Registros
+    @endif
 </div>
