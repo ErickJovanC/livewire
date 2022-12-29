@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="col-md-10 mb-3">
+    <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10 mb-3">
         <input type="text" wire:model="search" placeholder="Busqueda..." class="form-control bg-dark text-white">
     </div>
-    <div class="col-md-2 text-end mb-3">
-        @livewire('create-post')
+    <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 text-end mb-3">
+        <livewire:create-post />
     </div>
     <div class="col-12">
         @if ($posts->count())
@@ -81,5 +81,33 @@
         @else
             <div class="bg-dark text-white p-3">No se encontraron Registros</div>
         @endif
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addPost" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="addPostLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addPostLabel">Add New Post</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Content</label>
+                        <textarea type="password" class="form-control" id="content" rows="10">
+                        </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
