@@ -8,6 +8,7 @@
     <title>@yield('title' ?? 'Livewire')</title>
     @livewireStyles
     <script src="https://kit.fontawesome.com/263edd3e29.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
 </head>
 
@@ -44,5 +45,10 @@
         @yield('content')
     </div>
     @livewireScripts
+    <script>
+        Livewire.on('alert', function(){
+            swal("Registro Agregado", "El articulo se registro con éxito", "success");
+        });
+    </script>
 </body>
 </html>
