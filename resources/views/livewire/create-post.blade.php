@@ -16,14 +16,18 @@
                     <form action="" method="post">
                         <div class="mb-3">
                             <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="title" wire:model.defer="title">
-                            
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" wire:model.defer="title">
+                            @error('title')
+                                <span class="invalid-feedback d-block">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="content" class="form-label">Content</label>
-                            <textarea type="password" class="form-control" id="content" rows="10" wire:model.defer="content">
+                            <textarea type="password" class="form-control @error('content') is-invalid @enderror" id="content" rows="10" wire:model.defer="content">
                             </textarea>
-                            
+                            @error('content')
+                                <span class="invalid-feedback d-block">{{ $message }}</span>
+                            @enderror
                         </div>
                         <a class="btn btn-primary" wire:click="save" data-bs-dismiss="modal">Save</a>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

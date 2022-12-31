@@ -2,7 +2,7 @@
     <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10 mb-3">
         <input type="text" wire:model="search" placeholder="Busqueda..." class="form-control bg-dark text-white">
     </div>
-    <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 text-end mb-3">
+    <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-3">
         <livewire:create-post />
     </div>
     <div class="col-12">
