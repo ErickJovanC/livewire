@@ -13,6 +13,7 @@ class Articles extends Component
     protected $listeners = ['renderArticle' => 'render'];
     // variable que almacena los eventos
     // evento => metodo a ejecutar
+    // Si el evento y el metodo comparten el mismo, vasta con ['render']
 
     public function render()
     {

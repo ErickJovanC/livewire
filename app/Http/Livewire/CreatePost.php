@@ -27,7 +27,9 @@ class CreatePost extends Component
 
         // emit es un metodo para crear eventos (Listeners)
         // este evento se usa para actualizar la lista de articulos cuando se crea uno nuevo
-        $this->emit('renderArticle');
+        // $this->emit('renderArticle'); // Esto será escuchado por todo los componentes
+        $this->emitTo('articles', 'renderArticle'); // Esto solo será escuchado por el componente 'articles'
+
         $this->emit('alert');
 
         // Resetea los valores
