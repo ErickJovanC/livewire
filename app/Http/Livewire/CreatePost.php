@@ -24,5 +24,9 @@ class CreatePost extends Component
             'title' => $this->title,
             'content' => $this->content,
         ]);
+
+        // emit es un metodo para crear eventos (Listeners)
+        // este evento se usa para actualizar la lista de articulos cuando se crea uno nuevo
+        $this->emit('renderArticle');
     }
 }

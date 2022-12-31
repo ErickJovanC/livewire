@@ -8,7 +8,11 @@ class Articles extends Component
 {
     public $search;
     public $sort = 'id';
-    public $direction = 'asc';
+    public $direction = 'desc';
+
+    protected $listeners = ['renderArticle' => 'render'];
+    // variable que almacena los eventos
+    // evento => metodo a ejecutar
 
     public function render()
     {
