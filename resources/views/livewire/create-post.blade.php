@@ -4,7 +4,7 @@
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPost">Crear Nuevo Articulo</button>
     </div>
     {{-- <!-- Modal --> --}}
-    <div class="modal fade" id="addPost"  data-bs-keyboard="false" tabindex="-1"
+    <div wire:ignore.self class="modal fade" id="addPost"  data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="addPostLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -13,7 +13,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form wire:submit.prevent="save">
                         <div class="mb-3">
                             <label for="title" class="form-label">Title</label>
                             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" wire:model.defer="title">
@@ -29,7 +29,7 @@
                                 <span class="invalid-feedback d-block">{{ $message }}</span>
                             @enderror
                         </div>
-                        <a class="btn btn-primary" wire:click="save" data-bs-dismiss="modal">Save</a>
+                        <button wire:click="save" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     </form>
                 </div>

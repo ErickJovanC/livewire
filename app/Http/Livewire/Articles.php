@@ -21,6 +21,7 @@ class Articles extends Component
             ->orWhere('content', 'like', '%' . $this->search . '%')
             ->orderBy($this->sort, $this->direction)
             ->get();
+            
         return view('livewire.articles', compact('posts'));
     }
 
